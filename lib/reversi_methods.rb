@@ -75,10 +75,7 @@ module ReversiMethods
   end
 
   def finished?(board)
-    is_filled_board = count_stone(board, BLACK_STONE) + count_stone(board, WHITE_STONE) == 64
-    is_not_placeable = !placeable?(board, WHITE_STONE) && !placeable?(board, BLACK_STONE)
-
-    is_not_placeable || is_filled_board
+    !placeable?(board, WHITE_STONE) && !placeable?(board, BLACK_STONE)
   end
 
   def placeable?(board, attack_stone_color)
