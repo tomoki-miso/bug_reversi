@@ -6,14 +6,14 @@ class Position
   ROW = %w[1 2 3 4 5 6 7 8].freeze
 
   DIRECTIONS = [
-    TOP_LEFT      = :top_left,
-    TOP           = :top,
-    TOP_RIGHT     = :top_right,
-    LEFT          = :left,
-    RIGHT         = :right,
-    BOTTOM_LEFT   = :bottom_left,
-    BOTTOM        = :bottom,
-    BOTTOM_RIGHT  = :bottom_right
+    TOP_LEFT = :top_left,
+    TOP = :top,
+    TOP_RIGHT = :top_right,
+    LEFT = :left,
+    RIGHT = :right,
+    BOTTOM_LEFT = :bottom_left,
+    BOTTOM = :bottom,
+    BOTTOM_RIGHT = :bottom_right
   ].freeze
 
   attr_accessor :row, :col
@@ -52,13 +52,13 @@ class Position
 
   def next_position(direction)
     case direction
-    when TOP_LEFT     then Position.new(row - 1, col - 1)
-    when TOP          then Position.new(row - 1, col)
-    when TOP_RIGHT    then Position.new(row - 1, col + 1)
-    when LEFT         then Position.new(row,     col - 1)
-    when RIGHT        then Position.new(row,     col + 1)
-    when BOTTOM_LEFT  then Position.new(row + 1, col - 1)
-    when BOTTOM       then Position.new(row + 1, col)
+    when TOP_LEFT then Position.new(row - 1, col - 1)
+    when TOP then Position.new(row - 1, col)
+    when TOP_RIGHT then Position.new(row - 1, col + 1)
+    when LEFT then Position.new(row, col - 1)
+    when RIGHT then Position.new(row, col + 1)
+    when BOTTOM_LEFT then Position.new(row + 1, col - 1)
+    when BOTTOM then Position.new(row + 1, col)
     when BOTTOM_RIGHT then Position.new(row + 1, col + 1)
     else raise 'Unknown direction'
     end
